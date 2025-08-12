@@ -6,7 +6,7 @@ import altair as alt
 from datetime import datetime
 import io
 
-st.set_page_config(page_title=" 🔥 Incident Data Analytics County Fire & EMS Department 🚑 🚒", layout="wide")
+st.set_page_config(page_title=" 🔥 Incident Data Analytics Fire & EMS Department 🚑 🚒", layout="wide")
 st.info('This is a data analytics app for the fire & EMS department of the PG County')
 
 # ---------- Helper functions ----------
@@ -93,7 +93,7 @@ def format_percent_change(prev, curr):
 
 # ---------- UI - Title/Header ----------
 st.title("Incident Data Analytics for PG County Fire & EMS Department")
-st.markdown("Interactive dashboard upload CSV / XLSX / TXT or use default dataset")
+st.markdown("Data Upload CSV / XLSX / TXT or use default dataset")
 
 # ---------- File uploader and load data ----------
 uploaded_file = st.sidebar.file_uploader("Upload data (CSV, XLSX, TXT)", type=['csv','xlsx','txt'])
@@ -368,10 +368,10 @@ with col3:
             call_type_incidents.sort_values(by='Unique Incidents', ascending=False),
             x='Call Type Category',
             y='Unique Incidents',
-            title='Unique Incidents by Call Type Category',
+            title='Incident Calls by Call Type Category',
             color='Call Type Category',
             color_discrete_sequence=color_map,
-            labels={"Unique Incidents": "Total Unique Incidents"},
+            labels={"Unique Incidents": "Incident Calls"},
             template="plotly_white"
         )
         fig_cat_incidents.update_layout(xaxis_tickangle=-45, showlegend=False)
@@ -393,7 +393,7 @@ with col4:
             title='Unit Responses by Call Type Category',
             color='Call Type Category',
             color_discrete_sequence=color_map,
-            labels={"Unit Responses": "Number of Unit Responses"},
+            labels={"Unit Responses": "Unit Responses"},
             template="plotly_white"
         )
         fig_cat_responses.update_layout(xaxis_tickangle=-45, showlegend=False)
@@ -405,7 +405,7 @@ with col4:
 st.markdown("---")
 
 # ---------- Col5: Frequency table for Unique Incidents with Response Time stats ----------
-st.header("Response Time Summary â€” Unique Incidents (one event per Incident #)")
+st.header("Response Time Summary")
 
 # Prepare response time column detection
 response_col = None
@@ -463,12 +463,12 @@ else:
 
     # allow download
     csv_buf = summary_unique.to_csv(index=False).encode('utf-8')
-    st.download_button("â¬‡ï¸ Download Unique Incidents Response Summary (CSV)", data=csv_buf, file_name="unique_incidents_response_summary.csv", mime="text/csv")
+    st.download_button("Download Unique Incidents Response Summary (CSV)", data=csv_buf, file_name="unique_incidents_response_summary.csv", mime="text/csv")
 
 st.markdown("---")
 
 # ---------- Col6: Frequency table for Unit Responses (all counts of Incident Call Type Finals) ----------
-st.header("Response Time Summary â€” Unit Responses (all incident rows counted)")
+st.header("Response Time Summary Unit Responses")
 
 if len(filtered) == 0:
     st.info("No unit response data in filtered dataset.")
@@ -545,19 +545,19 @@ with st.expander("Interactive Heatmap: Incidents by Day & Hour", expanded=True):
         ).properties(
             width=900,
             height=420,
-            title="ðŸ“Š Heatmap of Unique Incidents"
+            title="Heatmap of Unique Incidents"
         ).interactive()
 
         st.altair_chart(heatmap, use_container_width=True)
 
         # Download button
         tmp_csv = heatmap_data.to_csv(index=False).encode('utf-8')
-        st.download_button(label="â¬‡ï¸ Download Heatmap Data (CSV)", data=tmp_csv, file_name="heatmap_data.csv", mime="text/csv")
+        st.download_button(label="Download Heatmap Data (CSV)", data=tmp_csv, file_name="heatmap_data.csv", mime="text/csv")
 
 st.markdown("---")
 
 # ---------- Additional exploratory visuals (optional) ----------
-st.header("Additional Quick Visuals")
+st.header("Busiest Units Details")
 
 col_a, col_b = st.columns(2)
 
@@ -584,4 +584,4 @@ with col_b:
 
 st.markdown("---")
 
-st.write("App built by a data analyst helper. Use the side panel to refine filters and date ranges. If you have custom column names, ensure they include 'Incident #' and a 'Response Time' column name or update the dataset headers accordingly.")
+st.write("App built by a data analyst Dr. S.A.Raji. Use the side panel to refine filters and date ranges. If you have custom column names, ensure they include 'Incident #' and a 'Response Time' column name or update the dataset headers accordingly.")
