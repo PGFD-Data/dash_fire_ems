@@ -7,7 +7,7 @@ from datetime import datetime
 import io
 
 st.set_page_config(page_title=" 🔥 Incident Data Analytics County Fire & EMS Department 🚑 🚒", layout="wide")
-st.info('This is a swift data analytics app for the fire & EMS department of the PG county')
+st.info('This is a data analytics app for the fire & EMS department of the PG County')
 
 # ---------- Helper functions ----------
 def try_parse_datetime_col(df):
