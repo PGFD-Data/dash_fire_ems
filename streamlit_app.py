@@ -92,8 +92,8 @@ def format_percent_change(prev, curr):
         return "â€”"
 
 # ---------- UI - Title/Header ----------
-st.title("Incident Data analytics for PG County Fire & EMS Department ðŸš’")
-st.markdown("Highly interactive dashboard â€” upload CSV / XLSX / TXT or use default dataset.")
+st.title("Incident Data analytics for PG County Fire & EMS Department")
+st.markdown("Highly interactive dashboard upload CSV / XLSX / TXT or use default dataset")
 
 # ---------- File uploader and load data ----------
 uploaded_file = st.sidebar.file_uploader("Upload data (CSV, XLSX, TXT)", type=['csv','xlsx','txt'])
