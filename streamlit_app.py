@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('🎈 PG Data Analytics Dashboard')
 
-st.write('Hello world!')
+st.info('This is a swift data analytics app for the fire & EMS department of the PG county')
