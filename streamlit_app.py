@@ -6,8 +6,7 @@ import altair as alt
 from datetime import datetime
 import io
 
-st.set_page_config(page_title=" 🔥 Incident Data Analytics for PG County Fire & EMS Department 🚑🚒", layout="wide")
-
+st.set_page_config(page_title=" 🔥 Incident Data Analytics County Fire & EMS Department 🚑 🚒", layout="wide")
 st.info('This is a swift data analytics app for the fire & EMS department of the PG county')
 
 # ---------- Helper functions ----------
