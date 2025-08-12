@@ -4,7 +4,7 @@ This is a dashbaord app
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://github.com/PGFD-Data/dash_fire_ems)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](dashfireems.streamlit.app)
 
 ## GitHub Codespaces
 
