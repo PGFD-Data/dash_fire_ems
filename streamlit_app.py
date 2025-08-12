@@ -92,8 +92,8 @@ def format_percent_change(prev, curr):
         return "â€”"
 
 # ---------- UI - Title/Header ----------
-st.title("Incident Data analytics for PG County Fire & EMS Department")
-st.markdown("Highly interactive dashboard upload CSV / XLSX / TXT or use default dataset")
+st.title("Incident Data Analytics for PG County Fire & EMS Department")
+st.markdown("Interactive dashboard upload CSV / XLSX / TXT or use default dataset")
 
 # ---------- File uploader and load data ----------
 uploaded_file = st.sidebar.file_uploader("Upload data (CSV, XLSX, TXT)", type=['csv','xlsx','txt'])
@@ -368,7 +368,7 @@ with col3:
             call_type_incidents.sort_values(by='Unique Incidents', ascending=False),
             x='Call Type Category',
             y='Unique Incidents',
-            title='ðŸš¨ Unique Incidents by Call Type Category',
+            title='Unique Incidents by Call Type Category',
             color='Call Type Category',
             color_discrete_sequence=color_map,
             labels={"Unique Incidents": "Total Unique Incidents"},
@@ -390,7 +390,7 @@ with col4:
             call_type_responses.sort_values(by='Unit Responses', ascending=False),
             x='Call Type Category',
             y='Unit Responses',
-            title='ðŸš’ Unit Responses by Call Type Category',
+            title='Unit Responses by Call Type Category',
             color='Call Type Category',
             color_discrete_sequence=color_map,
             labels={"Unit Responses": "Number of Unit Responses"},
